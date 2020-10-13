@@ -24,7 +24,7 @@ const App: React.FC = () => {
 
       <div>
         <a href="#" className="enter-app">
-          Entrar
+          >
         </a>
       </div>
      </div>
