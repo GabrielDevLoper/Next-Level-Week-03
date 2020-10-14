@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 import '../styles/pages/landing.css';
 import { FiArrowRight } from 'react-icons/fi';
 
@@ -13,13 +12,12 @@ const Landing: React.FC = () => {
      <div className="content-wrapper">
       <img src={logoImg} alt="Happy"/>
 
-
       <main>
         <h1>Leve a felicidade para o mundo</h1>
         <p>Visite orfanatos e mude o dia
             de muitas crianças.</p>
       </main>
-
+  
       <div className="location">
         <strong>Maceió</strong>
         <span>Alagoas</span>
