@@ -4,7 +4,11 @@ import Orphanage from '../models/Orphanage';
 
 class OrphanageController {
   async index(req: Request, res: Response) {
+    const orphanageRepository = getRepository(Orphanage);
 
+    const orphanages = await orphanageRepository.find();
+
+    return res.json(orphanages);
   }
 
   async store(req: Request, res: Response) {
