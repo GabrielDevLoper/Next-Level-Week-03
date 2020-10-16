@@ -40,7 +40,7 @@ class OrphanageController {
 
 
     const orphanage = orphanageRepository.create({
-      name, 
+      nome, 
       latitude, 
       longitude, 
       about, 
