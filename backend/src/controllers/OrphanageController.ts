@@ -22,6 +22,14 @@ class OrphanageController {
       open_on_weekends
     } = req.body;
 
+    const requestImages = req.files as Express.Multer.File[];
+    const images = requestImages.map(image => {
+      return {
+        path: image.filename
+      }
+    })
+
+    console.log(images);
     const orphanageRepository = getRepository(Orphanage);
 
 
@@ -32,13 +40,13 @@ class OrphanageController {
       about, 
       instructions, 
       opening_hours, 
-      open_on_weekends
+      open_on_weekends,
+      images
     });
 
-
-    await orphanageRepository.save(orphanage)
+    const savedOrphanage = await orphanageRepository.save(orphanage)
         
-    return res.status(201).json({message: "Orfanato cadastrado com sucesso"});
+    return res.status(201).json(savedOrphanage);
   }
 
   async update(req: Request, res: Response) {
@@ -46,6 +54,12 @@ class OrphanageController {
   }
 
   async show(req: Request, res: Response) {
+    const orphanageRepository = getRepository(Orphanage);
+    const { id } = req.params;
+
+    const orphanage = await orphanageRepository.findOneOrFail(id);
+
+    return res.json(orphanage);
     
   }
 
