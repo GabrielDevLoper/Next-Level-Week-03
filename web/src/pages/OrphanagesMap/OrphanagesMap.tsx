@@ -2,11 +2,11 @@ import React from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 import { Link } from 'react-router-dom';
 import { FiPlus } from 'react-icons/fi';
-import '../styles/pages/orphanages-map.css';
+import './orphanages-map.css';
 
 import 'leaflet/dist/leaflet.css';
 
-import mapMakerImg from '../images/map-marker.svg';
+import mapMakerImg from '../../images/map-marker.svg';
 
 const OrphanagesMap: React.FC = () => {
   return (
